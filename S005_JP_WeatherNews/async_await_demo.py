@@ -2,7 +2,7 @@
 # _*_ coding:utf-8 _*_
 """
 @File               : async_await_demo.py
-@Project            : S003_JP_WeatherNews
+@Project            : S005_JP_WeatherNews
 @CreateTime         : 2024/6/22 21:00
 @Author             : biaobro
 @Software           : PyCharm

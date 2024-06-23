@@ -1,8 +1,8 @@
 # !/usr/bin/env python3
 # _*_ coding:utf-8 _*_
 """
-@File               : S003_JP_WeatherNews.py
-@Project            : S003_JP_WeatherNews
+@File               : S005_JP_WeatherNews.py
+@Project            : S005_JP_WeatherNews
 @CreateTime         : 2024/6/22 12:23
 @Author             : biaobro
 @Software           : PyCharm
