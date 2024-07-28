@@ -20,7 +20,7 @@ import time
 while True:
 
     books = []
-    for page in range(1,5):
+    for page in range(1,2):
 
         url = f"https://books.toscrape.com/catalogue/page-{page}.html"
 
@@ -30,17 +30,18 @@ while True:
         articles = ol.find_all('article', class_='product_pod')
 
         for article in articles:
+            link = article.find('a').attrs['href']
             image = article.find('img')
             title = image.attrs['alt']
             star = article.find('p')['class'][1]
             price = float(article.find('p', class_='price_color').text[1:])
 
-            books.append([title, price, star])
+            books.append([link, title, price, star])
 
         print(f"{url} scrape done!")
 
     # print(books)
-    df = pd.DataFrame(books, columns=['title', 'price', 'star'])
+    df = pd.DataFrame(books, columns=['link', 'title', 'price', 'star'])
     df.to_csv('books.csv', index=False)
 
     if len(df) > 20:
