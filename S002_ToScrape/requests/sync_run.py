@@ -38,7 +38,7 @@ def main():
     start_time = time.time()
 
     print('Saving the output of extracted information')
-    with open('../books.csv') as file:
+    with open('../extractToExcel/books.csv') as file:
         csv_reader = csv.DictReader(file)
         for csv_row in csv_reader:
             url = 'https://books.toscrape.com/catalogue/' + csv_row['link']

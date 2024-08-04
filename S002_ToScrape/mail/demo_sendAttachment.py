@@ -49,8 +49,8 @@ def email(message):
     # att3.add_header('Content-Disposition', 'attachment', filename="test.pdf")
     # msg.attach(att3)
     # # 构造附件4,xlsx类型附件
-    att4 = MIMEApplication(open('books.csv', 'rb').read())
-    att4.add_header('Content-Disposition', 'attachment', filename="books.csv")
+    att4 = MIMEApplication(open('../extractToExcel/books.csv', 'rb').read())
+    att4.add_header('Content-Disposition', 'attachment', filename="../extractToExcel/books.csv")
     msg.attach(att4)
     # # 构造附件5,mp3类型附件
     # att5 = MIMEApplication(open('test.mp3', 'rb').read())

@@ -40,7 +40,7 @@ async def main():
     start_time = time.time()
 
     tasks = []
-    with open('../books.csv') as file:
+    with open('../extractToExcel/books.csv') as file:
         csv_reader = csv.DictReader(file)
         for csv_row in csv_reader:
             url = 'https://books.toscrape.com/catalogue/' + csv_row['link']
