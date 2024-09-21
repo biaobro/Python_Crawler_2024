@@ -1,0 +1,107 @@
+date,home_team,score,away_team
+16-08-2024,Celta,2 - 1,Alaves
+25-08-2024,Alaves,0 - 0,Betis
+28-08-2024,Sociedad,1 - 2,Alaves
+01-09-2024,Alaves,2 - 0,Las Palmas
+14-09-2024,Espanol,3 - 2,Alaves
+21-09-2024,Alaves,? - ?,Sevilla
+15-08-2024,Ath Bilbao,1 - 1,Getafe
+24-08-2024,Barcelona,2 - 1,Ath Bilbao
+28-08-2024,Ath Bilbao,1 - 0,Valencia
+31-08-2024,Ath Bilbao,0 - 1,Ath Madrid
+15-09-2024,Las Palmas,2 - 3,Ath Bilbao
+19-09-2024,Leganes,0 - 2,Ath Bilbao
+19-08-2024,Villarreal,2 - 2,Ath Madrid
+25-08-2024,Ath Madrid,3 - 0,Girona
+28-08-2024,Ath Madrid,0 - 0,Espanol
+31-08-2024,Ath Bilbao,0 - 1,Ath Madrid
+15-09-2024,Ath Madrid,3 - 0,Valencia
+17-08-2024,Valencia,1 - 2,Barcelona
+24-08-2024,Barcelona,2 - 1,Ath Bilbao
+27-08-2024,Vallecano,1 - 2,Barcelona
+31-08-2024,Barcelona,7 - 0,Valladolid
+15-09-2024,Girona,1 - 4,Barcelona
+15-08-2024,Betis,1 - 1,Girona
+25-08-2024,Alaves,0 - 0,Betis
+01-09-2024,Real Madrid,2 - 0,Betis
+13-09-2024,Betis,2 - 0,Leganes
+18-09-2024,Betis,2 - 1,Getafe
+16-08-2024,Celta,2 - 1,Alaves
+23-08-2024,Celta,3 - 1,Valencia
+26-08-2024,Villarreal,4 - 3,Celta
+01-09-2024,Osasuna,3 - 2,Celta
+15-09-2024,Celta,3 - 1,Valladolid
+19-08-2024,Valladolid,1 - 0,Espanol
+24-08-2024,Espanol,0 - 1,Sociedad
+28-08-2024,Ath Madrid,0 - 0,Espanol
+31-08-2024,Espanol,2 - 1,Vallecano
+14-09-2024,Espanol,3 - 2,Alaves
+15-08-2024,Ath Bilbao,1 - 1,Getafe
+24-08-2024,Getafe,0 - 0,Vallecano
+01-09-2024,Getafe,0 - 0,Sociedad
+14-09-2024,Sevilla,1 - 0,Getafe
+18-09-2024,Betis,2 - 1,Getafe
+15-08-2024,Betis,1 - 1,Girona
+25-08-2024,Ath Madrid,3 - 0,Girona
+29-08-2024,Girona,4 - 0,Osasuna
+01-09-2024,Sevilla,0 - 2,Girona
+15-09-2024,Girona,1 - 4,Barcelona
+16-08-2024,Las Palmas,2 - 2,Sevilla
+25-08-2024,Leganes,2 - 1,Las Palmas
+29-08-2024,Las Palmas,1 - 1,Real Madrid
+01-09-2024,Alaves,2 - 0,Las Palmas
+15-09-2024,Las Palmas,2 - 3,Ath Bilbao
+17-08-2024,Osasuna,1 - 1,Leganes
+25-08-2024,Leganes,2 - 1,Las Palmas
+28-08-2024,Valladolid,0 - 0,Leganes
+31-08-2024,Leganes,0 - 1,Mallorca
+13-09-2024,Betis,2 - 0,Leganes
+19-09-2024,Leganes,0 - 2,Ath Bilbao
+18-08-2024,Mallorca,1 - 1,Real Madrid
+24-08-2024,Osasuna,1 - 0,Mallorca
+27-08-2024,Mallorca,0 - 0,Sevilla
+31-08-2024,Leganes,0 - 1,Mallorca
+14-09-2024,Mallorca,1 - 2,Villarreal
+17-09-2024,Mallorca,1 - 0,Sociedad
+17-08-2024,Osasuna,1 - 1,Leganes
+24-08-2024,Osasuna,1 - 0,Mallorca
+29-08-2024,Girona,4 - 0,Osasuna
+01-09-2024,Osasuna,3 - 2,Celta
+16-09-2024,Vallecano,3 - 1,Osasuna
+18-08-2024,Mallorca,1 - 1,Real Madrid
+25-08-2024,Real Madrid,3 - 0,Valladolid
+29-08-2024,Las Palmas,1 - 1,Real Madrid
+01-09-2024,Real Madrid,2 - 0,Betis
+14-09-2024,Sociedad,0 - 2,Real Madrid
+16-08-2024,Las Palmas,2 - 2,Sevilla
+23-08-2024,Sevilla,1 - 2,Villarreal
+27-08-2024,Mallorca,0 - 0,Sevilla
+01-09-2024,Sevilla,0 - 2,Girona
+14-09-2024,Sevilla,1 - 0,Getafe
+21-09-2024,Alaves,? - ?,Sevilla
+18-08-2024,Sociedad,1 - 2,Vallecano
+24-08-2024,Espanol,0 - 1,Sociedad
+28-08-2024,Sociedad,1 - 2,Alaves
+01-09-2024,Getafe,0 - 0,Sociedad
+14-09-2024,Sociedad,0 - 2,Real Madrid
+17-09-2024,Mallorca,1 - 0,Sociedad
+17-08-2024,Valencia,1 - 2,Barcelona
+23-08-2024,Celta,3 - 1,Valencia
+28-08-2024,Ath Bilbao,1 - 0,Valencia
+31-08-2024,Valencia,1 - 1,Villarreal
+15-09-2024,Ath Madrid,3 - 0,Valencia
+19-08-2024,Valladolid,1 - 0,Espanol
+25-08-2024,Real Madrid,3 - 0,Valladolid
+28-08-2024,Valladolid,0 - 0,Leganes
+31-08-2024,Barcelona,7 - 0,Valladolid
+15-09-2024,Celta,3 - 1,Valladolid
+18-08-2024,Sociedad,1 - 2,Vallecano
+24-08-2024,Getafe,0 - 0,Vallecano
+27-08-2024,Vallecano,1 - 2,Barcelona
+31-08-2024,Espanol,2 - 1,Vallecano
+16-09-2024,Vallecano,3 - 1,Osasuna
+19-08-2024,Villarreal,2 - 2,Ath Madrid
+23-08-2024,Sevilla,1 - 2,Villarreal
+26-08-2024,Villarreal,4 - 3,Celta
+31-08-2024,Valencia,1 - 1,Villarreal
+14-09-2024,Mallorca,1 - 2,Villarreal
