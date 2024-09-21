@@ -1,7 +1,7 @@
 # !/usr/bin/env python3
 # _*_ coding:utf-8 _*_
 """
-@File               : 060_clickButton.py
+@File               : 052_clickButton.py
 @Project            : S009_SubsLikeScript
 @CreateTime         : 2024/9/18 22:47
 @Author             : biaobro
