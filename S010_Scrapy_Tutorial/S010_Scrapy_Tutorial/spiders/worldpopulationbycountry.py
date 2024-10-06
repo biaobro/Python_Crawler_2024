@@ -25,10 +25,27 @@ class WorldpopulationbycountrySpider(scrapy.Spider):
             #     'countryLink': countryLink
             # }
 
-            # 得到绝对地址，有2种方式
+            # 绝对地址，有2种方式
             # absUrl = f'https://www.worldometers.info/{countryLink}'
             # absUrl = response.urljoin(countryLink)
             # yield scrapy.Request(absUrl)
 
-            # 得到相对地址
-            yield response.follow(url=countryLink)
+            # 相对地址
+            # callback 直接写函数名称，不要带括号
+            yield response.follow(url=countryLink, callback=self.parseCountry, meta={'countryName': countryName})
+
+    def parseCountry(self, response):
+        country = response.request.meta['countryName']
+        # 得到的结果取第1个元素，是[1]，不是[0]
+        table = response.xpath('(//table[contains(@class, "table-list")])[1]')
+        rows = table.xpath('.//tbody/tr')
+
+        for row in rows:
+            year = row.xpath('.//td[1]/text()').get()
+            population = row.xpath('.//td[2]/strong/text()').get()
+
+            yield {
+                'country': country,
+                'year': year,
+                'population': population
+            }
