@@ -19,8 +19,16 @@ class WorldpopulationbycountrySpider(scrapy.Spider):
             countryName = country.xpath(".//text()").get()
             countryLink = country.xpath(".//@href").get()
 
-            yield {
-                # 'title': title,
-                'countryName': countryName,
-                'countryLink': countryLink
-            }
+            # yield {
+            #     # 'title': title,
+            #     'countryName': countryName,
+            #     'countryLink': countryLink
+            # }
+
+            # 得到绝对地址，有2种方式
+            # absUrl = f'https://www.worldometers.info/{countryLink}'
+            # absUrl = response.urljoin(countryLink)
+            # yield scrapy.Request(absUrl)
+
+            # 得到相对地址
+            yield response.follow(url=countryLink)
