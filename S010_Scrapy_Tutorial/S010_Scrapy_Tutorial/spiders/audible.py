@@ -33,3 +33,10 @@ class AudibleSpider(scrapy.Spider):
                 'language': language,
                 # 'rating': rating
             }
+
+        # 其实找到目标的路径有很多，就看哪种更高效
+        nextPageUrl = response.xpath('//ul[contains(@class,"pagingElements")]//span[contains(@class,"nextButton")]/a/@href').get()
+
+        if nextPageUrl:
+            # 继续调用自己
+            yield response.follow(url=nextPageUrl, callback=self.parse)
