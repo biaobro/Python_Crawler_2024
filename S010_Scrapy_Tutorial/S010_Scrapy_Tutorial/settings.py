@@ -17,7 +17,8 @@ NEWSPIDER_MODULE = "S010_Scrapy_Tutorial.spiders"
 #USER_AGENT = "S010_Scrapy_Tutorial (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# 有的网站没有这个文件，可以直接跳过
+# ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
