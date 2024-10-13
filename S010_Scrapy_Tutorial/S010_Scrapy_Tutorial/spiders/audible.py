@@ -6,6 +6,10 @@ class AudibleSpider(scrapy.Spider):
     allowed_domains = ["www.audible.com"]
     start_urls = ["https://www.audible.com/search"]
 
+    def start_requests(self):
+        yield scrapy.Request(url=self.start_urls[0], callback=self.parse,
+                       headers={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'})
+
     def parse(self, response):
         # xpath 无法定位到 class 包含2个以及以上值时的情况
         # 需要改用 contains
@@ -32,6 +36,7 @@ class AudibleSpider(scrapy.Spider):
                 'releaseDate': releaseDate,
                 'language': language,
                 # 'rating': rating
+                'User-Agent': response.request.headers['User-Agent']
             }
 
         # 其实找到目标的路径有很多，就看哪种更高效
@@ -39,4 +44,6 @@ class AudibleSpider(scrapy.Spider):
 
         if nextPageUrl:
             # 继续调用自己
-            yield response.follow(url=nextPageUrl, callback=self.parse)
+            yield response.follow(url=nextPageUrl, callback=self.parse,
+                                  headers={
+                                      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'})
