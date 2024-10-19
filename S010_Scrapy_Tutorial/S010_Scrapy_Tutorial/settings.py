@@ -66,7 +66,7 @@ NEWSPIDER_MODULE = "S010_Scrapy_Tutorial.spiders"
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    #  The lower number, the higher priority
-   "S010_Scrapy_Tutorial.pipelines.S010ScrapyTutorialPipeline": 300,
+   "S010_Scrapy_Tutorial.pipelines.MongodbPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
