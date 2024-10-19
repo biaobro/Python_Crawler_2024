@@ -9,10 +9,17 @@ from itemadapter import ItemAdapter
 import logging
 import pymongo
 import urllib.parse
+import sqlite3
+
 
 class MongodbPipeline:
     db_name = 'ScrapyCrawler'
     collection_name = 'transcripts'
+
+    def __init__(self):
+        self.db = None
+        self.client = None
+
     def open_spider(self, spider):
         logging.warning('Spider Opened - Pipeline')
         username = urllib.parse.quote_plus('biaobro')
@@ -28,4 +35,50 @@ class MongodbPipeline:
 
     def process_item(self, item, spider):
         self.db[self.collection_name].insert_one(item)
+        return item
+
+
+class SQLitePipeline:
+    def __init__(self):
+        self.cur = None
+        self.conn = None
+
+    def open_spider(self, spider):
+        self.conn = sqlite3.connect('transcripts.db')
+        self.cur = self.conn.cursor()
+
+        # query
+        # transcript TEXT,
+        try:
+            # 注意最后1个字段不要写逗号，否则无法创建TABLE，还没有明确报错
+            self.cur.execute('''
+                CREATE TABLE IF NOT EXISTS transcripts(
+                    title TEXT,
+                    plot TEXT,
+                    transcript TEXT,
+                    url  TEXT
+                )
+            ''')
+
+            self.conn.commit()
+        except sqlite3.OperationalError:
+            logging.error('sqlite3 OperationalError')
+            pass
+        logging.warning('Spider Opened - Pipeline')
+
+    def close_spider(self, spider):
+        self.conn.close()
+        logging.warning('Spider Closed - Pipeline')
+
+    def process_item(self, item, spider):
+        self.cur.execute('''
+            INSERT INTO transcripts (title, plot, transcript, url) VALUES(?,?,?,?)
+        ''', (
+            item.get('title'),
+            item.get('plot'),
+            item.get('transcript'),
+            item.get('url')
+        ))
+
+        self.conn.commit()
         return item

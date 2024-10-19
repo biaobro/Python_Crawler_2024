@@ -37,9 +37,13 @@ class TranscriptsSpider(CrawlSpider):
     def parse_item(self, response):
         # print(response.url)
         article = response.xpath("//article[@class='main-article']")
+
+        # sqlite3 does not support list insert, have to transfer to str
+        transcript_list = article.xpath("./div[@class='full-script']/text()").getall()
+        transcript_str = ' '.join(transcript_list)
         yield{
             'title': article.xpath("./h1/text()").get(),
             'plot': article.xpath("./p/text()").get(),
-            'transcript': article.xpath("./div[@class='full-script']/text()").getall(),
+            'transcript': transcript_str,
             'url': response.url,
         }
