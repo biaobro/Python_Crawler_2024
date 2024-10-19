@@ -17,3 +17,11 @@ class QuotesSpider(scrapy.Spider):
                 'tags': quote.get('tags'),
                 'quotes': quote.get('text')
             }
+
+        has_next = json_resp.get('has_next')
+        if has_next:
+            next_page_number = json_resp['page'] + 1
+            yield scrapy.Request(
+                url=f'https://quotes.toscrape.com/api/quotes?page={next_page_number}',
+                callback=self.parse
+            )
