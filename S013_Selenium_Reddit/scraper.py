@@ -63,48 +63,40 @@ subreddit['description'] = description
 subreddit['creation_date'] = creation_date
 subreddit['members'] = members
 
-print(subreddit)
-exit()
-
+# 获取文章
 posts = []
 
-post_html_elements = driver \
-    .find_elements(By.CSS_SELECTOR, '[data-testid="post-container"]')
+# 使用 class name 来定位元素
+post_html_elements = driver.find_elements(By.CSS_SELECTOR, '.w-full.m-0')
 
 for post_html_element in post_html_elements:
     post = {}
 
-    # scraping logic...
-    upvotes = post_html_element \
-        .find_element(By.CSS_SELECTOR, '[data-click-id="upvote"]') \
-        .find_element(By.XPATH, "following-sibling::*[1]") \
-        .get_attribute('innerText')
-
-    author = post_html_element \
-        .find_element(By.CSS_SELECTOR, '[data-testid="post_author_link"]') \
-        .text
-
-    title = post_html_element \
-        .find_element(By.TAG_NAME, 'h3') \
-        .text
-
     try:
-        outbound_link = post_html_element \
-            .find_element(By.CSS_SELECTOR, '[data-testid="outbound-link"]') \
-            .get_attribute('href')
-    except NoSuchElementException:
-        outbound_link = None
+        # 通过标签名称来定位元素
+        shreddit_post = post_html_element.find_element(By.TAG_NAME, 'shreddit-post')
 
-    comments = post_html_element \
-        .find_element(By.CSS_SELECTOR, '[data-click-id="comments"]') \
-        .get_attribute('innerText') \
-        .replace(' Comments', '')
+        # scraping logic...
+        # 获取标签的属性值
+        comment_count = shreddit_post.get_attribute('comment-count')
+        author = shreddit_post.get_attribute('author')
+        title = shreddit_post.get_attribute('post-title')
+        score = shreddit_post.get_attribute('score')
+        create_timestamp = shreddit_post.get_attribute('created-timestamp')
+        content_href = shreddit_post.get_attribute('content-href')
+
+        # //shreddit-post/div/div[2]/div[3]/shreddit-post-flair/faceplate-tracker/a/span/div
+        plate = shreddit_post.find_element(By.XPATH, 'div/div[2]/div[3]/shreddit-post-flair/faceplate-tracker/a/span/div').text
+    except NoSuchElementException:
+        continue
 
     # 使用检索到的数据填充字典
-    post['upvotes'] = upvotes
+    post['comment_count'] = comment_count
+    post['author'] = author
     post['title'] = title
-    post['outbound_link'] = outbound_link
-    post['comments'] = comments
+    post['score'] = score
+    post['create_timestamp'] = create_timestamp
+    post['plate'] = plate
 
     # to avoid adding ad posts
     # to the list of scraped posts
